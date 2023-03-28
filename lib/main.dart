@@ -1,5 +1,6 @@
 import 'package:crmtuo/routes/router_constants.dart';
 import 'package:crmtuo/routes/routes.dart';
+import 'package:crmtuo/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,16 +27,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: LoginScreen(),
       onGenerateRoute: Routes.onGenerateRoute,
       initialRoute: routeSplash,
     );
-  }
-}
-
-class SplashScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Container());
   }
 }
