@@ -1,3 +1,3 @@
 const String routeSplash = "/";
 const String routeLogin = "/login";
-const String routeDashboard = "/dashboard";
+const String routeHome = "/home";

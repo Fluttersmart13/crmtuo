@@ -1,3 +1,4 @@
+import 'package:crmtuo/routes/router_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -123,13 +124,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 BlocConsumer<LoginBloc, LoginState>(
                   listener: (context, state) {
-                    // if (state is ApiSuccessState) {
-                    //   Navigator.pushNamedAndRemoveUntil(
-                    //       context, routeHome, (Route<dynamic> route) => false,
-                    //       arguments: 0);
-                    // } else if (state is ApiFailState) {
-                    //   showSnackBarError(context, state.errorMessage);
-                    // }
+                    if (state is ApiSuccessState) {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, routeHome, (Route<dynamic> route) => false,
+                          arguments: 0);
+                    } else if (state is ApiFailState) {
+                      showSnackBarError(context, state.errorMessage);
+                    }
                   },
                   builder: (context, state) {
                     if (state is LoadingState) {

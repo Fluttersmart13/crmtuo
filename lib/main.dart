@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       home: LoginScreen(),
       onGenerateRoute: Routes.onGenerateRoute,
-      initialRoute: routeSplash,
+      initialRoute: routeLogin,
     );
   }
 }

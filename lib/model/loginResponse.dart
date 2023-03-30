@@ -1,4 +1,4 @@
-class LoginRespose {
+class LoginResponse {
   User? user;
   String? mode;
   List<Organisations>? organisations;
@@ -11,7 +11,7 @@ class LoginRespose {
   TwoFactorMethods? twoFactorMethods;
   String? passwordNotification;
 
-  LoginRespose(
+  LoginResponse(
       {this.user,
       this.mode,
       this.organisations,
@@ -24,7 +24,7 @@ class LoginRespose {
       this.twoFactorMethods,
       this.passwordNotification});
 
-  LoginRespose.fromJson(Map<String, dynamic> json) {
+  LoginResponse.fromJson(Map<String, dynamic> json) {
     user = json['user'] != null ? new User.fromJson(json['user']) : null;
     mode = json['mode'];
     if (json['organisations'] != null) {
