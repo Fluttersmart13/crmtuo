@@ -11,7 +11,7 @@ class ApiRepository {
   static ApiRepository getInstance() {
     dio.options.headers["Content-type"] =
         "application/json"; // config your dio headers globally
-    //client = RestClient(dio);
+    client = RestClient(dio);
     return _sharedInstance;
   }
 }
