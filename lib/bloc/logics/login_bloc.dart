@@ -1,5 +1,12 @@
+import 'dart:convert';
+import 'dart:developer';
+
+import 'package:crmtuo/model/LoginRequest.dart';
+import 'package:crmtuo/repository/ApiRepository.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../model/loginResponse.dart';
 import '../../utility/helper.dart';
 import '../../utility/internet_connectivity.dart';
 import '../events/login_event.dart';
@@ -22,6 +29,24 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           .then((value) async {
         if (value!) {
           emit(LoadingState());
+
+          try {
+            LoginRequest loginRequest = LoginRequest(
+                provider: "EMAIL",
+                username: "vikasthombare009@gmail.com",
+                password: "Vikas@908",
+                twoFactorMethod: null);
+
+            LoginResponse? loginResponse =
+                await ApiRepository.getInstance().loginApi(loginRequest);
+
+            print(jsonEncode(loginResponse));
+          } on DioError catch (e) {
+            log("data$e");
+            String error =
+                InternetConnectivityCheck.getInstance().getNetworkError(e);
+            emit(ApiFailState(error));
+          }
         } else {
           emit(ApiFailState(no_internet_msg));
         }

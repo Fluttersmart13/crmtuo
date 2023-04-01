@@ -1,6 +1,5 @@
 import 'package:crmtuo/routes/router_constants.dart';
 import 'package:crmtuo/routes/routes.dart';
-import 'package:crmtuo/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      // home: LoginScreen(),
       onGenerateRoute: Routes.onGenerateRoute,
       initialRoute: routeLogin,
     );

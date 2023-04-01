@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Safety Login"),
+        title: const Text("Login"),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -39,10 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                const SizedBox(
-                    height: 100,
-                    width: 100,
-                    child: Image(image: AssetImage("assets/images/logo.png"))),
+                // const SizedBox(
+                //     height: 100,
+                //     width: 100,
+                //     child: Image(image: AssetImage("assets/images/logo.png"))),
                 SizedBox(height: size.height * 0.03),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 16),

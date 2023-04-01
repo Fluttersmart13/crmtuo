@@ -6,10 +6,10 @@ import '../model/loginResponse.dart';
 
 part 'retrofitClient.g.dart';
 
-@RestApi(baseUrl: "http://219.65.91.49:9090/")
+@RestApi(baseUrl: "https://sandbox.crm.com/")
 abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
 
-  @POST("ClaimManagment/Account/Login")
+  @POST("backoffice/v2/users/authenticate")
   Future<LoginResponse> loginApi(@Body() LoginRequest reqModel);
 }
