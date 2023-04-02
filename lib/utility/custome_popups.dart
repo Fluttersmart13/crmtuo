@@ -49,7 +49,18 @@ class CustomTextStyle {
         fontWeight: FontWeight.w400,
         color: color,
       ),
+    //  overflow: TextOverflow.ellipsis,
+      softWrap: false,
       maxLines: maxLines,
+    );
+  }
+
+  static Widget dotcircle({double? width,double? height}){
+    return  Container(
+      height: height,
+      width: width,
+      decoration: const BoxDecoration(
+          color: Colors.grey, shape: BoxShape.circle),
     );
   }
 }
