@@ -13,7 +13,7 @@ class _RestClient implements RestClient {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://219.65.91.49:9090/';
+    baseUrl ??= 'https://sandbox.crm.com/';
   }
 
   final Dio _dio;
@@ -35,7 +35,7 @@ class _RestClient implements RestClient {
     )
             .compose(
               _dio.options,
-              'ClaimManagment/Account/Login',
+              'backoffice/v2/users/authenticate',
               queryParameters: queryParameters,
               data: _data,
             )

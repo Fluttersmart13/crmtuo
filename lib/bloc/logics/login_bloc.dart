@@ -39,7 +39,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
             LoginResponse? loginResponse =
                 await ApiRepository.getInstance().loginApi(loginRequest);
-
+            emit(ApiSuccessState());
             print(jsonEncode(loginResponse));
           } on DioError catch (e) {
             log("data$e");

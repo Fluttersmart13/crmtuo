@@ -73,7 +73,7 @@ class User {
   String? email;
   String? firstName;
   String? lastName;
-  String? isOwner;
+  bool? isOwner;
   int? signUpDate;
 
   User(
